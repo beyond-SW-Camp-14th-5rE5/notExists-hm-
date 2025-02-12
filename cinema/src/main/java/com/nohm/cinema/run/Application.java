@@ -1,12 +1,15 @@
 package com.nohm.cinema.run;
 
+import com.nohm.cinema.aggregate.Genre;
 import com.nohm.cinema.service.MemberService;
+import com.nohm.cinema.service.MovieService;
 
 import java.util.Scanner;
 
 public class Application {
 
     private static final MemberService ms = new MemberService();
+    private static final MovieService mvs = new MovieService();
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -30,7 +33,7 @@ public class Application {
 
             switch(input){
                 case 1: break;
-                case 2: break;
+                case 2: mvs.searchMovie(chooseGenre()); break;
                 case 3: break;
                 case 4: break;
                 case 5: break;
@@ -41,5 +44,9 @@ public class Application {
 
             }
         }
+    }
+
+    private static Genre chooseGenre() {
+        return null;
     }
 }
