@@ -1,6 +1,8 @@
 package com.nohm.cinema.run;
 
 import com.nohm.cinema.aggregate.Genre;
+import com.nohm.cinema.aggregate.Member;
+import com.nohm.cinema.aggregate.Movie;
 import com.nohm.cinema.service.MemberService;
 import com.nohm.cinema.service.MovieService;
 
@@ -34,10 +36,20 @@ public class Application {
             switch(input){
                 case 1: mvs.findAllMovies(); break;
                 case 2: mvs.searchMovie(chooseGenre()); break;
-                case 3: break;
-                case 4: break;
-                case 5: break;
-                case 9:
+                case 3: mvs.reserveMovie(chooseMovie()); break;
+                case 4:
+                    mvs.findMemberForReservation(chooseMemNo());
+                    break;
+                case 5: mvs.cancelReserveMovie(); break;
+                case 6: ms.registMember(signUp()); break;
+                case 7: ms.findMyProfile(chooseMemNo()); break;
+                case 8:
+                    Member selected = ms.findMemberForMod(chooseMemNo());
+                    if (selected == null) continue;
+                    ms.modifyMyProfile(reform(selected));
+                    break;
+                case 9: ms.removeMember(chooseMemNo()); break;
+                case 0:
                     System.out.println("영화 예매 프로그램을 종료합니다."); return;
                 default:
                     System.out.println("번호를 잘못 입력하셨습니다.");
@@ -46,7 +58,28 @@ public class Application {
         }
     }
 
+    private static Member reform(Member modifyMember) {
+        return modifyMember;
+    }
+
+    private static Member signUp() {
+        Member member = null;
+        return member;
+    }
+
+    private static int chooseMemNo() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("회원 번호를 입력하세요: ");
+        return sc.nextInt();
+    }
+
+    private static Movie chooseMovie() {
+        Movie movie = null;
+        return movie;
+    }
+
     private static Genre chooseGenre() {
-        return null;
+        Genre genre = null;
+        return genre;
     }
 }
