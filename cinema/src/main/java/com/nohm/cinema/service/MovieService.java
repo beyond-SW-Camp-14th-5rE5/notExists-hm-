@@ -12,4 +12,7 @@ public class MovieService {
 
     public void searchMovie(Genre genre) {
     }
+
+    public void findAllMovies() {
+    }
 }

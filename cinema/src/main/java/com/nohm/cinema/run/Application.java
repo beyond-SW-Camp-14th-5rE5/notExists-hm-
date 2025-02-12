@@ -32,7 +32,7 @@ public class Application {
             int input = sc.nextInt();
 
             switch(input){
-                case 1: break;
+                case 1: mvs.findAllMovies(); break;
                 case 2: mvs.searchMovie(chooseGenre()); break;
                 case 3: break;
                 case 4: break;
