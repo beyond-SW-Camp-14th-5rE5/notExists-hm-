@@ -9,13 +9,12 @@ public class Application {
     private static final MemberService ms = new MemberService();
 
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
 
         while(true) {
-            System.out.println("==== 영화 예매 시스템?프로그램? ====");
-            System.out.println("1. 영화 검색");              // 장르별 검색 기능 구현
-            System.out.println("2. 상영 중인 영화 목록");
+            System.out.println("==== 영화 예매 프로그램 ====");
+            System.out.println("1. 상영 중인 영화 목록");
+            System.out.println("2. 영화 검색");
             System.out.println("3. 영화 예매");
             System.out.println("4. 영화 예매 내역 조회");
             System.out.println("5. 영화 예매 취소");
