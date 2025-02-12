@@ -13,12 +13,18 @@ public class Application {
 
         while(true) {
             System.out.println("==== 영화 예매 프로그램 ====");
-            System.out.println("1. 상영 중인 영화 목록");
-            System.out.println("2. 영화 검색");
+            System.out.println("1. 상영 중인 영화 목록 조회");
+            System.out.println("2. 장르별 영화 검색");
             System.out.println("3. 영화 예매");
             System.out.println("4. 영화 예매 내역 조회");
             System.out.println("5. 영화 예매 취소");
-            System.out.println("9. 프로그램 종료");
+
+            System.out.println("6. 회원 가입");
+            System.out.println("7. 내 정보 조회");
+            System.out.println("8. 내 정보 수정");
+            System.out.println("9. 회원 탈퇴");
+            
+            System.out.println("0. 프로그램 종료");
             System.out.print("메뉴를 선택해 주세요: ");
             int input = sc.nextInt();
 
