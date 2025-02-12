@@ -10,6 +10,7 @@ public class MemberService {
     }
 
     public Member findMemberForMod(int memNo) {
+        return null;
     }
 
     public void modifyMyProfile(Object reform) {
