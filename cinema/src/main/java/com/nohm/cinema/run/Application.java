@@ -12,7 +12,7 @@ public class Application {
         Scanner sc = new Scanner(System.in);
 
         while(true) {
-            System.out.println("==== 영화 예매 프로그램 ====");
+            System.out.println("===== 영화 예매 프로그램 =====");
             System.out.println("1. 상영 중인 영화 목록 조회");
             System.out.println("2. 장르별 영화 검색");
             System.out.println("3. 영화 예매");
