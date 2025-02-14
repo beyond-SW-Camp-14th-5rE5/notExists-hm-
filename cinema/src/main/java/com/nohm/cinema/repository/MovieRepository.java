@@ -1,5 +1,6 @@
 package com.nohm.cinema.repository;
 
+import com.nohm.cinema.aggregate.Genre;
 import com.nohm.cinema.aggregate.Movie;
 
 import java.io.*;
@@ -12,9 +13,9 @@ public class MovieRepository {
     public MovieRepository() {
         if (!file.exists()) {
             ArrayList<Movie> defaultMovie = new ArrayList<>();
-            defaultMovie.add(new Movie());
-            defaultMovie.add(new Movie());
-            defaultMovie.add(new Movie());
+            defaultMovie.add(new Movie("title1", "director1", new java.util.Date(2025-02-14), Genre.COMEDY));
+//            defaultMovie.add(new Movie());
+//            defaultMovie.add(new Movie());
 
             saveMovies(defaultMovie);
         }

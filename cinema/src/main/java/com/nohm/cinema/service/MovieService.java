@@ -6,6 +6,7 @@ import com.nohm.cinema.aggregate.Movie;
 import com.nohm.cinema.repository.MovieRepository;
 
 import java.util.ArrayList;
+import com.nohm.cinema.repository.MemberRepository;
 
 public class MovieService {
 
