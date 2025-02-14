@@ -79,7 +79,24 @@ public class Application {
     }
 
     private static Genre chooseGenre() {
-        Genre genre = null;
-        return genre;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("원하는 장르를 입력하세요: ");
+        String genre = sc.nextLine();
+        Genre gr = null;
+        switch (genre) {
+            case "COMEDY": gr = Genre.COMEDY; break;
+            case "ROMANCE":gr = Genre.ROMANCE; break;
+            case "HORROR": gr = Genre.HORROR; break;
+            case "SF": gr = Genre.SF; break;
+            case "ACTION": gr = Genre.ACTION; break;
+            case "FANTASY": gr = Genre.FANTASY; break;
+            case "THRILLER": gr = Genre.THRILLER; break;
+            case "DOCUMENTARY": gr = Genre.DOCUMENTARY; break;
+            case "ANIMATION": gr = Genre.ANIMATION; break;
+            case "MUSICAL": gr = Genre.MUSICAL; break;
+            case "HISTORICAL": gr = Genre.HISTORICAL; break;
+            case "WAR": gr = Genre.WAR; break;
+        }
+        return gr;
     }
 }

@@ -60,4 +60,8 @@ public class MovieRepository {
     public ArrayList<Movie> selectAllMovies() {
         return movieList;
     }
+
+    public Movie selectMovieBy(Genre genre) {
+        return null;
+    }
 }

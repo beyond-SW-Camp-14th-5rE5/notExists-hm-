@@ -7,7 +7,7 @@ public class Member {
     private String id;
     private String pwd;
     private Date birth;
-//    private AccountStatus acntStatus;
+    private AccountStatus accountStatus;
 
     public Member() {
     }
