@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+
 public class Member implements Serializable {
     private int memNo;                  //번호
     private String id;                  // 아이디
