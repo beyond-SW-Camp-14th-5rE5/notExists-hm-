@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class MovieRepository {
     private final ArrayList<Movie> movieList = new ArrayList<>();
-    private final File file = new File("src/main/java/com/nohm/cinema/db/movieDB.dat");
+    private final File file = new File("cinema/src/main/java/com/nohm/cinema/db/movieDB.dat");
 
     public MovieRepository() {
         if (!file.exists()) {
