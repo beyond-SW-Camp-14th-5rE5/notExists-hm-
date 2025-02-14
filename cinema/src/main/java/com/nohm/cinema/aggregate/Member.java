@@ -4,21 +4,13 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-<<<<<<< HEAD
-public class Member {
-    private int memNo;
-    private String id;
-    private String pwd;
-    private Date birth;
-    private AccountStatus accountStatus;
-=======
+
 public class Member implements Serializable {
     private int memNo;                  //번호
     private String id;                  // 아이디
     private String pwd;                 // 비밀번호
     private LocalDate birth;            // 생년월일
     private AccountStatus acntStatus;   // 활성화 여부
->>>>>>> main
 
     public Member() {
     }
