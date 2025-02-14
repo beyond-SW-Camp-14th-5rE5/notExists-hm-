@@ -99,6 +99,8 @@ public class Application {
 
     private static Genre chooseGenre() {
         Scanner sc = new Scanner(System.in);
+        System.out.println("[ COMEDY / ROMANCE / HORROR / SF / ACTION / FANTASY / THRILLER ");
+        System.out.println("/ DOCUMENTARY / ANIMATION / MUSICAL / HISTORICAL / WAR ]");
         System.out.print("원하는 장르를 입력하세요: ");
         String genre = sc.nextLine();
         Genre gr = null;
