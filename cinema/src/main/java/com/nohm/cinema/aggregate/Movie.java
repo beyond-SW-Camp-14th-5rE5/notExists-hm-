@@ -1,8 +1,9 @@
 package com.nohm.cinema.aggregate;
 
 import java.io.Serializable;
+
 import java.time.LocalDate;
-import java.util.Date;
+
 
 public class Movie implements Serializable {
     private String title;
