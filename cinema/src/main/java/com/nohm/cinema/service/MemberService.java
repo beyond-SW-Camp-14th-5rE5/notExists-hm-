@@ -1,9 +1,23 @@
 package com.nohm.cinema.service;
 
+import com.nohm.cinema.aggregate.AccountStatus;
 import com.nohm.cinema.aggregate.Member;
+import com.nohm.cinema.repository.MemberRepository;
 
 public class MemberService {
-    public void registMember(Object o) {
+
+    private final MemberRepository mr = new MemberRepository();
+
+    public MemberService() {
+    }
+
+    public void registMember(Member member) {
+        int lastMemberNo = mr.selectLastMemberNo();
+        member.setMemNo(lastMemberNo + 1);
+
+        member.setAcntStatus(AccountStatus.ACTIVE);
+
+        int result = mr.insertMember(member);
     }
 
     public void findMyProfile(int memNo) {

@@ -6,6 +6,8 @@ import com.nohm.cinema.aggregate.Movie;
 import com.nohm.cinema.service.MemberService;
 import com.nohm.cinema.service.MovieService;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Application {
@@ -64,6 +66,23 @@ public class Application {
 
     private static Member signUp() {
         Member member = null;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("아이디를 입력하세요: ");
+        String id = sc.nextLine();
+
+        System.out.println("패스워드를 입력하세요: ");
+        String pwd = sc.nextLine();
+
+        System.out.println("생년월일을 입력하세요(YYYYMMDD): ");
+        String birth = sc.nextLine();
+        while(birth.length() != 8){
+            System.out.println("생년월일을 잘못입력하셨습니다.");
+            System.out.println("생년월일을 입력하세요(YYYYMMDD): ");
+            birth = sc.nextLine();
+        }
+
+        member = new Member(id, pwd, birth);
+
         return member;
     }
 
