@@ -32,4 +32,7 @@ public class MemberService {
 
     public void removeMember(int memNo) {
     }
+
+    public void loginMember() {
+    }
 }
