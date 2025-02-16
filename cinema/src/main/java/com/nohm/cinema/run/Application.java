@@ -39,7 +39,8 @@ public class Application {
                     if(!loginSuccess) {
                         System.out.println("다시 로그인 해주세요.");
                         break;}
-                    System.out.println("로그인에 성공하셨습니다!!");
+                    Member currentMember = ms.getLoggedMember();
+                    System.out.println("현재 로그인한 사용자: " + currentMember.getId());
                     break Label;
                 case 4: ms.registMember(signUp()); break;
                 case 0:

@@ -111,6 +111,7 @@ public class MemberRepository {
     }
 
     public Member findById(String id) {
+
         for (Member member : memberList) {
             if(member.getId().equals(id)) return member;
         }
