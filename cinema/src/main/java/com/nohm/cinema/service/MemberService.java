@@ -21,7 +21,16 @@ public class MemberService {
         int result = mr.insertMember(member);
     }
 
-    public void findMyProfile(int memNo) {
+    public void findMyProfile() {
+        if (loggedMember == null) {
+            System.out.println("로그인이 되어 있지 않습니다.");
+            return;
+        } else {
+            System.out.println("아이디 : " + loggedMember.getId());
+            System.out.println("비밀번호 : " + loggedMember.getPwd());
+            System.out.println("생년월일 : " + loggedMember.getBirth());
+            System.out.println("회원 상태 : " + loggedMember.getAcntStatus());
+        }
     }
 
     public Member findMemberForMod(int memNo) {
