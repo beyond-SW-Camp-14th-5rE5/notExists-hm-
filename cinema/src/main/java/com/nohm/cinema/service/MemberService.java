@@ -33,6 +33,25 @@ public class MemberService {
     public void removeMember(int memNo) {
     }
 
-    public void loginMember() {
+    public boolean loginMember(Member member) {
+        Member foundMember = mr.findById(member.getId());
+
+        if(foundMember != null) {
+            if(!foundMember.getPwd().equals(member.getPwd())) {
+                System.out.println("비밀번호가 일치하지 않습니다.");
+                return false;
+            }
+
+            if(foundMember.getAcntStatus() == AccountStatus.DEACTIVATED) {
+                System.out.println("해당 계정은 비활성화 되어 있습니다.");
+                return false;
+            }
+        } else {
+            System.out.println("해당 아이디는 존재하지 않습니다.");
+            return false;
+        }
+
+        System.out.println("로그인 성공!");
+        return true;
     }
 }

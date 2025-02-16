@@ -34,7 +34,13 @@ public class Application {
             switch (input){
                 case 1: mvs.findAllMovies(); break;
                 case 2: mvs.searchMovie(chooseGenre()); break;
-                case 3: ms.loginMember(); break Label;
+                case 3:
+                    boolean loginSuccess = ms.loginMember(login());
+                    if(!loginSuccess) {
+                        System.out.println("다시 로그인 해주세요.");
+                        break;}
+                    System.out.println("로그인에 성공하셨습니다!!");
+                    break Label;
                 case 4: ms.registMember(signUp()); break;
                 case 0:
                     System.out.println("영화 예매 프로그램을 종료합니다."); return;
@@ -42,7 +48,6 @@ public class Application {
                     System.out.println("번호를 잘못 입력하셨습니다.");
             }
 
-            break;
         }
 
         while(true) {
@@ -85,6 +90,18 @@ public class Application {
         }
     }
 
+    private static Member login() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("아이디를 입력하세요: ");
+        String id = sc.nextLine().trim();
+
+        System.out.print("비밀번호를 입력하세요: ");
+        String pwd = sc.nextLine().trim();
+
+        return new Member(id, pwd );
+    }
+
     private static Member reform(Member modifyMember) {
         return modifyMember;
     }
@@ -92,17 +109,17 @@ public class Application {
     private static Member signUp() {
         Member member = null;
         Scanner sc = new Scanner(System.in);
-        System.out.println("아이디를 입력하세요: ");
+        System.out.print("아이디를 입력하세요: ");
         String id = sc.nextLine();
 
-        System.out.println("패스워드를 입력하세요: ");
+        System.out.print("패스워드를 입력하세요: ");
         String pwd = sc.nextLine();
 
-        System.out.println("생년월일을 입력하세요(YYYYMMDD): ");
+        System.out.print("생년월일을 입력하세요(YYYYMMDD): ");
         String birth = sc.nextLine();
         while(birth.length() != 8){
             System.out.println("생년월일을 잘못입력하셨습니다.");
-            System.out.println("생년월일을 입력하세요(YYYYMMDD): ");
+            System.out.print("생년월일을 입력하세요(YYYYMMDD): ");
             birth = sc.nextLine();
         }
 

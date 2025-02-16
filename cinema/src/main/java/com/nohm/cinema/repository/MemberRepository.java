@@ -109,6 +109,13 @@ public class MemberRepository {
 
         return result;
     }
+
+    public Member findById(String id) {
+        for (Member member : memberList) {
+            if(member.getId().equals(id)) return member;
+        }
+        return null;
+    }
 }
 
 
