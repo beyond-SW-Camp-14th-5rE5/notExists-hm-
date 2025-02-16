@@ -29,6 +29,11 @@ public class Member implements Serializable {
         this.birth = LocalDate.parse(birth, DateTimeFormatter.BASIC_ISO_DATE);
     }
 
+    public Member(String id, String pwd) {
+        this.id = id;
+        this.pwd = pwd;
+    }
+
     public int getMemNo() {
         return memNo;
     }
