@@ -60,4 +60,13 @@ public class MemberService {
     public Member getLoggedMember() {
         return loggedMember;
     }
+
+    public void logoutMember() {
+        if(loggedMember != null) {
+            System.out.println("✅ " + loggedMember.getId() + "님 로그아웃 되었습니다.");
+            loggedMember = null;
+        } else {
+            System.out.println("❌ 로그인된 사용자가 없습니다.");
+        }
+    }
 }

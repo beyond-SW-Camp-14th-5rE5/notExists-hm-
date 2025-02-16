@@ -18,7 +18,6 @@ public class Application {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Label:
         while(true) {
             System.out.println("==== 영화 예매 프로그램 ====");
             System.out.println("1. 상영 중인 영화 목록 조회");
@@ -30,6 +29,7 @@ public class Application {
             System.out.println("0. 프로그램 종료");
             System.out.print("메뉴를 선택해 주세요: ");
             int input = sc.nextInt();
+            sc.nextLine();
 
             switch (input){
                 case 1: mvs.findAllMovies(); break;
@@ -41,15 +41,19 @@ public class Application {
                         break;}
                     Member currentMember = ms.getLoggedMember();
                     System.out.println("현재 로그인한 사용자: " + currentMember.getId());
-                    break Label;
+                    loggedInMenu();
+                    break;
                 case 4: ms.registMember(signUp()); break;
                 case 0:
                     System.out.println("영화 예매 프로그램을 종료합니다."); return;
                 default:
                     System.out.println("번호를 잘못 입력하셨습니다.");
             }
-
         }
+    }
+
+    private static void loggedInMenu() {
+        Scanner sc = new Scanner(System.in);
 
         while(true) {
             System.out.println("===== 영화 예매 프로그램 =====");
@@ -62,7 +66,8 @@ public class Application {
             System.out.println("6. 내 정보 조회");
             System.out.println("7. 내 정보 수정");
             System.out.println("8. 회원 탈퇴");
-            
+            System.out.println("9. 로그아웃");
+
             System.out.println("0. 프로그램 종료");
             System.out.print("메뉴를 선택해 주세요: ");
             int input = sc.nextInt();
@@ -82,8 +87,9 @@ public class Application {
                     ms.modifyMyProfile(reform(selected));
                     break;
                 case 8: ms.removeMember(chooseMemNo()); break;
+                case 9: ms.logoutMember(); return;
                 case 0:
-                    System.out.println("영화 예매 프로그램을 종료합니다."); return;
+                    System.out.println("영화 예매 프로그램을 종료합니다."); System.exit(0);
                 default:
                     System.out.println("번호를 잘못 입력하셨습니다.");
 
