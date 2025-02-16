@@ -80,7 +80,7 @@ public class Application {
                     mvs.findMemberForReservation(chooseMemNo());
                     break;
                 case 5: mvs.cancelReserveMovie(); break;
-                case 6: ms.findMyProfile(chooseMemNo()); break;
+                case 6: ms.findMyProfile(); break;
                 case 7:
                     Member selected = ms.findMemberForMod(chooseMemNo());
                     if (selected == null) continue;
