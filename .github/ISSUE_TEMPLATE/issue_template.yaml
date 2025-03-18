@@ -1,8 +1,8 @@
 name: "🐣 Enhancement"
 description: "새로운 기능 추가"
-title : "[MOVIE/MEMBER]"
+title : "[MEMBER]"
 labels: ["🐣 enhancement"]
-projects: ["beyond-SW-Camp-14th-5rE5/2"]
+
 body:
   - type: textarea
     attributes:
